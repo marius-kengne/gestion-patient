@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ajouter un Patient</title>
+</head>
+<body>
+<h1>Ajouter un Patient</h1>
+<form action="#" th:action="@{/add-patient}" th:object="${patient}" method="post">
+    <label for="name">Nom :</label>
+    <input type="text" id="name" th:field="*{name}" required/>
+    <br>
+    <label for="age">^ Age :</label>
+    <input type="number" id="age" th:field="*{age}" required/>
+    <br>
+    <label for="sick">Malade :</label>
+    <input type="checkbox" id="sick" th:field="*{sick}"/>
+    <br>
+    <button type="submit">Enregistrer</button>
+</form>
+<a href="/patients">Retour `a la liste</a>
+</body>
+</html>
