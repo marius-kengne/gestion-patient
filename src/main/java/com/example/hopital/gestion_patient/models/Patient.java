@@ -1,4 +1,4 @@
-package com.example.hopital.models;
+package com.example.hopital.gestion_patient.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -46,3 +46,4 @@ public class Patient {
         this.malade = malade;
     }
 }
+

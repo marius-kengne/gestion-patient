@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Ajouter un Patient</title>
+    <title>Modifier Patient</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -66,20 +66,19 @@
 </head>
 <body>
 <div class="container">
-    <h1>Ajouter un Patient</h1>
-    <form action="#" th:action="@{/add-patient}" th:object="${patient}" method="post">
+    <h1>Modifier Patient</h1>
+    <form th:action="@{/edit-patient}" th:object="${patient}" method="post">
+        <input type="hidden" th:field="*{id}" />
+
         <label for="nom">Nom :</label>
-        <input type="text" id="nom" th:field="*{nom}" placeholder="Nom du patient" required/>
+        <input type="text" id="nom" th:field="*{nom}" required placeholder="Nom du patient"/>
 
         <label for="age">Âge :</label>
-        <input type="number" id="age" th:field="*{age}" placeholder="Âge du patient" required/>
+        <input type="number" id="age" th:field="*{age}" required placeholder="Âge du patient"/>
 
-        <label for="malade">Malade :</label>
-        <input type="checkbox" id="malade" th:field="*{malade}"/>
-
-        <button type="submit">Enregistrer</button>
+        <button type="submit">Modifier</button>
     </form>
-    <a href="/gestion-patient/patients" class="btn">Retour à la liste</a>
+    <a href="/gestion-patient/patients" class="btn">Retour</a>
 </div>
 </body>
 </html>
